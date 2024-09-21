@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import './Register.css';
-import { FaUser, FaLock, FaUserShield } from 'react-icons/fa'; // Importing icons
+import { FaUser, FaLock, FaEnvelope, FaUserShield } from 'react-icons/fa';
 
 const Register = () => {
-    const navigate = useNavigate(); // Initialize navigate
+    const navigate = useNavigate(); 
     const [username, setUsername] = useState('');
+    const [email, setEmail] = useState(''); 
     const [password, setPassword] = useState('');
     const [role, setRole] = useState('Assigned User');
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/api/auth/register', { username, password, role });
-        navigate('/login'); // Navigate to the login page
+        await axios.post('http://localhost:5000/api/auth/register', { username, email, password, role });
+        navigate('/login');
     };
 
     return (
@@ -22,15 +23,41 @@ const Register = () => {
             <form className="register-form" onSubmit={handleRegister}>
                 <div className="input-group">
                     <FaUser className="input-icon" />
-                    <input type="text" className="register-input" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
+                    <input 
+                        type="text" 
+                        className="register-input" 
+                        placeholder="Username" 
+                        onChange={(e) => setUsername(e.target.value)} 
+                        required 
+                    />
+                </div>
+                <div className="input-group">
+                    <FaEnvelope className="input-icon" />
+                    <input 
+                        type="email" 
+                        className="register-input" 
+                        placeholder="Email" 
+                        onChange={(e) => setEmail(e.target.value)} 
+                        required 
+                    />
                 </div>
                 <div className="input-group">
                     <FaLock className="input-icon" />
-                    <input type="password" className="register-input" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                    <input 
+                        type="password" 
+                        className="register-input" 
+                        placeholder="Password" 
+                        onChange={(e) => setPassword(e.target.value)} 
+                        required 
+                    />
                 </div>
                 <div className="input-group">
                     <FaUserShield className="input-icon" />
-                    <select className="register-select" onChange={(e) => setRole(e.target.value)}>
+                    <select 
+                        className="register-select" 
+                        onChange={(e) => setRole(e.target.value)} 
+                        required
+                    >
                         <option value="Assigned User">Assigned User</option>
                         <option value="Task Owner">Task Owner</option>
                         <option value="Admin">Admin</option>

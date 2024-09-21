@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient background */
+    background: linear-gradient(to right, #4facfe, #00f2fe);
 }
 
 .update-task-container {
@@ -26,7 +26,7 @@ body {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    width: 400px; /* Adjust width as needed */
+    width: 400px;
 }
 
 .update-task-form input,
@@ -41,14 +41,14 @@ body {
 }
 
 .update-task-form textarea {
-    resize: none; /* Prevent resizing */
-    height: 80px; /* Set a fixed height */
+    resize: none;
+    height: 80px;
 }
 
 .update-task-button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff; /* Blue button */
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;

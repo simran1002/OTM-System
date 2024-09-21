@@ -9,29 +9,55 @@ const app = express();
 connectDB();
 
 const cron = require('node-cron');
-const Task = require('./models/Task'); // Import your Task model
+const Task = require('./models/Task');
+const User = require('./models/User');
 const { sendEmail } = require('./emailService');
 
-// Schedule task every minute
-cron.schedule('* * * * *', async () => {
+// Schedule the task to run every 5 minutes
+cron.schedule('*/5 * * * *', async () => {
     const currentTime = new Date();
-    const thirtyMinutesLater = new Date(currentTime.getTime() + 30 * 60000); // 30 minutes later
+    const thirtyMinutesLater = new Date(currentTime.getTime() + 30 * 60000);
 
-    // Find tasks that are due in 30 minutes
-    const tasksDue = await Task.find({
-        dueDate: { $gte: currentTime, $lte: thirtyMinutesLater }
-    }).populate('assignedTo'); // Populate the assigned user
+    try {
+        const tasksDue = await Task.find({
+            dueDate: { $gte: currentTime, $lte: thirtyMinutesLater }
+        }).populate('assignedTo');
 
-    tasksDue.forEach(task => {
-        const email = task.assignedTo.email; // Assuming the User model has an email field
-        const subject = `Task Due Soon: ${task.title}`;
-        const text = `Your task "${task.title}" is due in 30 minutes.`;
+        // Send email to each user assigned to a task
+        for (const task of tasksDue) {
+            if (task.assignedTo) {
+                const { assignedTo, title, dueDate } = task;
+                const email = assignedTo.email;
 
-        sendEmail(email, subject, text)
-            .then(() => console.log(`Email sent to ${email}`))
-            .catch(error => console.error(`Error sending email to ${email}:`, error));
-    });
+                // Generate the email body
+                const emailBody = generateTaskEmail(assignedTo.name, title, dueDate);
+
+                // Send the email
+                await sendEmail(email, `Task Due Soon: ${title}`, emailBody)
+                    .then(() => console.log(`Email sent to ${email}`))
+                    .catch(error => console.error(`Error sending email to ${email}:`, error));
+            } else {
+                console.warn(`Task "${task.title}" has no assigned user.`);
+            }
+        }
+    } catch (error) {
+        console.error('Error checking for due tasks:', error);
+    }
 });
+
+// Generate email body for the task
+const generateTaskEmail = (name, taskTitle, dueDate) => {
+    return `
+        Hi ${name},
+
+        This is a reminder that the task "${taskTitle}" is due on ${dueDate.toLocaleString()}.
+
+        Please ensure to complete it on time.
+
+        Best regards,
+        Task Management Team
+    `;
+};
 
 app.use(cors());
 app.use(express.json());

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient background */
+    background: linear-gradient(to right, #4facfe, #00f2fe);
 }
 
 .create-task-container {
@@ -19,7 +19,7 @@ body {
     font-size: 28px;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1s; /* Animation */
+    animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {
@@ -36,7 +36,7 @@ body {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    width: 400px; /* Adjust width as needed */
+    width: 400px;
     animation: slideIn 0.5s ease-out;
 }
 
@@ -65,9 +65,9 @@ body {
 }
 
 .create-task-input {
-    width: 100%; /* Adjust width to fit the container */
-    max-width: 350px; /* Set a maximum width */
-    padding: 10px 10px 10px 40px; /* Added padding for icons */
+    width: 100%;
+    max-width: 350px;
+    padding: 10px 10px 10px 40px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -83,7 +83,7 @@ body {
 .create-task-button {
     width: 100%;
     padding: 10px;
-    background-color: #28a745; /* Green button */
+    background-color: #28a745;
     color: white;
     border: none;
     border-radius: 4px;

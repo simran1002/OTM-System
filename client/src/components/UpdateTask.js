@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom'; // Use useNavigate instead
-import './UpdateTask.css'; // Link to the CSS file
+import { useParams, useNavigate } from 'react-router-dom'; 
+import './UpdateTask.css'; 
 
 const UpdateTask = () => {
-    const { id } = useParams(); // Get task ID from URL
-    const navigate = useNavigate(); // Use useNavigate for navigation
+    const { id } = useParams(); 
+    const navigate = useNavigate(); 
     const [task, setTask] = useState({
         title: '',
         description: '',
@@ -13,7 +13,7 @@ const UpdateTask = () => {
         status: 'Not Started',
         assignedTo: ''
     });
-    const [users, setUsers] = useState([]); // State for user options
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
         const fetchTask = async () => {
@@ -29,7 +29,7 @@ const UpdateTask = () => {
             const response = await axios.get(`http://localhost:5000/api/users`, {
                 headers: { Authorization: token }
             });
-            setUsers(response.data); // Assuming response.data is an array of user objects
+            setUsers(response.data);
         };
 
         fetchTask();
@@ -48,7 +48,7 @@ const UpdateTask = () => {
             headers: { Authorization: token }
         });
         alert('Task updated successfully!');
-        navigate('/tasks'); // Redirect after updating
+        navigate('/tasks');
     };
 
     return (
@@ -73,7 +73,7 @@ const UpdateTask = () => {
                 <input
                     type="date"
                     name="dueDate"
-                    value={task.dueDate.split('T')[0]} // Format date for input
+                    value={task.dueDate.split('T')[0]}
                     onChange={handleChange}
                     required
                 />

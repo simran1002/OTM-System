@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaPlus, FaEye, FaEdit } from 'react-icons/fa'; // Importing icons
+import { FaPlus, FaEye, FaEdit } from 'react-icons/fa';
 
 const TaskOptions = () => {
     const navigate = useNavigate();

@@ -4,46 +4,46 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient background */
+    background: linear-gradient(to right, #4facfe, #00f2fe);
     text-align: center;
-    padding: 20px; /* Optional: Add padding for better spacing */
+    padding: 20px;
 }
 
 .task-options-container h2 {
-    color: #fff; /* White title */
+    color: #fff;
     margin-bottom: 30px;
-    font-size: 32px; /* Increase font size */
-    line-height: 1.2; /* Adjust line height for better readability */
+    font-size: 32px;
+    line-height: 1.2;
 }
 
 .button-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Ensure the button group takes full width for centering */
+    width: 100%;
 }
 
 .task-options-container button {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center text and icons */
+    justify-content: center;
     padding: 12px 24px;
     margin: 10px;
     border: none;
-    border-radius: 8px; /* Rounder corners */
+    border-radius: 8px;
     background-color: #007bff;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s; /* Add scale effect */
-    font-size: 18px; /* Increase font size */
-    width: 200px; /* Optional: Set a fixed width for buttons */
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 18px;
+    width: 200px;
 }
 
 .task-options-container button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Slight grow effect */
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .task-options-container button svg {
-    margin-right: 8px; /* Space between icon and text */
+    margin-right: 8px;
 }

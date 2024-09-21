@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { FaUser, FaLock } from 'react-icons/fa'; // Import icons
-import './Login.css'; // Link to the new CSS file
+import { FaUser, FaLock } from 'react-icons/fa';
+import './Login.css';
 
 const Login = () => {
     const navigate = useNavigate();

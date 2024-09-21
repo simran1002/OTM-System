@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { FaTasks, FaRegStickyNote, FaCalendarAlt, FaUser, FaClipboardCheck } from 'react-icons/fa'; // Import additional icons
-import './CreateTask.css'; // Link to the new CSS file
+import { FaTasks, FaRegStickyNote, FaCalendarAlt, FaUser, FaClipboardCheck } from 'react-icons/fa';
+import './CreateTask.css';
 
 const CreateTask = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [dueDate, setDueDate] = useState('');
-    const [status, setStatus] = useState('Not Started'); // Default status
-    const [assignedTo, setAssignedTo] = useState(''); // For user assignment
+    const [status, setStatus] = useState('Not Started');
+    const [assignedTo, setAssignedTo] = useState('');
 
     const handleCreateTask = async (e) => {
         e.preventDefault();
