@@ -10,11 +10,13 @@ router.post('/', auth, async (req, res) => {
     res.status(201).send(task);
 });
 
+
 // Get Tasks for Assigned User
 router.get('/', auth, async (req, res) => {
     const tasks = await Task.find({ assignedTo: req.user.id }).populate('owner');
     res.json(tasks);
 });
+
 
 // Update Task
 router.patch('/:id', auth, async (req, res) => {
@@ -22,4 +24,6 @@ router.patch('/:id', auth, async (req, res) => {
     res.json(task);
 });
 
+
 module.exports = router;
+
