@@ -8,6 +8,22 @@ router.post('/', auth, async (req, res) => {
     const task = new Task({ ...req.body, owner: req.user.id });
     await task.save();
     res.status(201).send(task);
+
+    const assignTask = async (taskId, userId) => {
+        const task = await Task.findById(taskId);
+        task.assignedTo = userId;
+        await task.save();
+    
+        const user = await User.findById(userId); // Fetch the user details
+        const email = user.email;
+        const subject = `New Task Assigned: ${task.title}`;
+        const text = `You have been assigned a new task: "${task.title}".`;
+    
+        sendEmail(email, subject, text)
+            .then(() => console.log(`Email sent to ${email}`))
+            .catch(error => console.error(`Error sending email to ${email}:`, error));
+    };
+    
 });
 
 

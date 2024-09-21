@@ -1,0 +1,38 @@
+/* TaskList.css */
+.task-list-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.task-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    transition: transform 0.2s;
+}
+
+.task-item:hover {
+    transform: scale(1.02);
+}
+
+.task-title {
+    font-size: 20px;
+    color: #007bff;
+}
+
+.task-description {
+    color: #555;
+    margin: 10px 0;
+}
+
+.task-due-date,
+.task-status {
+    font-size: 14px;
+    color: #666;
+}
