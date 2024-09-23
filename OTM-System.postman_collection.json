@@ -1,0 +1,515 @@
+{
+	"info": {
+		"_postman_id": "60f53612-f749-4675-8e2e-a88c81e85ffb",
+		"name": "OTM-System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24106690"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Simran Yadav\",\r\n    \"password\": \"@Simran123\",\r\n    \"email\": \"simranyadav163@gmail.com\",\r\n    \"role\": \"Admin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://otm-system.onrender.com/api/auth/register",
+					"protocol": "https",
+					"host": [
+						"otm-system",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Simran Yadav\",\r\n    \"password\": \"Simran123\",\r\n    \"email\": \"simranyadav464@gmail.com\",\r\n    \"role\": \"Admin\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-zb93U4mZGQHbp1Z6ypRTvlzTGwY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Sep 2024 17:15:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "User registered"
+				}
+			]
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Simran Yadav\",\r\n    \"password\": \"@Simran123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://otm-system.onrender.com/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"otm-system",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Simran Yadav\",\r\n    \"password\": \"Simran123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "203"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cb-lTVBC2CEsPtFrHX3s3Csg5qsNwo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Sep 2024 17:16:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWVmZjQyOTQ5YzY0NzJiNzg5NWZkZCIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcyNjkzODk5MSwiZXhwIjoxNzI2OTQyNTkxfQ.-Ki-l1Mi10gJai86nHXis56052CdqrfMIPcLRzDvs5w\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWU3YmM2NGQxMTZhNTE1YmFjMmEyOSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcyNjkwNTMxMH0.M69-EXVZKWcoPiIWsZQLWTg-VfqEOFK14cUJ60P9CjI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"New Task\",\r\n    \"description\": \"This is a task description.\",\r\n    \"dueDate\": \"2023-12-31T00:00:00Z\",\r\n    \"status\": \"Not Started\",\r\n    \"assignedTo\": \"66ee79597ec531f000651535\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"New Task\",\r\n    \"description\": \"This is a task description.\",\r\n    \"dueDate\": \"2023-12-31T00:00:00Z\",\r\n    \"status\": \"Not Started\",\r\n    \"assignedTo\": \"66ee79597ec531f000651535\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "240"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f0-5K8weO/iiX/BiTW8zTFgKnaXFuo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Sep 2024 08:26:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"New Task\",\n    \"description\": \"This is a task description.\",\n    \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n    \"status\": \"Not Started\",\n    \"owner\": \"66ee7bc64d116a515bac2a29\",\n    \"assignedTo\": \"66ee79597ec531f000651535\",\n    \"_id\": \"66ee834a58309b2f21f58507\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWU3OTU5N2VjNTMxZjAwMDY1MTUzNSIsInJvbGUiOiJBc3NpZ25lZCBVc2VyIiwiaWF0IjoxNzI2OTA3Mzc5fQ.4ZefadCxRfCkn0lN9dH_OSBJ-uCKEWJP42U41gRWuxw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "366"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16e-AVhRDDzCK5EVyyqsCv2bF4631dg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Sep 2024 08:30:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"66ee834a58309b2f21f58507\",\n        \"title\": \"New Task\",\n        \"description\": \"This is a task description.\",\n        \"dueDate\": \"2023-12-31T00:00:00.000Z\",\n        \"status\": \"Not Started\",\n        \"owner\": {\n            \"_id\": \"66ee7bc64d116a515bac2a29\",\n            \"username\": \"Admin\",\n            \"password\": \"$2a$10$7hA4EO6hQ20o948s6vVkv.7D8IypGAJfUkDx9/YXAsRvl1yUpzI0G\",\n            \"role\": \"Admin\",\n            \"__v\": 0\n        },\n        \"assignedTo\": \"66ee79597ec531f000651535\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZWU3OTU5N2VjNTMxZjAwMDY1MTUzNSIsInJvbGUiOiJBc3NpZ25lZCBVc2VyIiwiaWF0IjoxNzI2OTA3Mzc5fQ.4ZefadCxRfCkn0lN9dH_OSBJ-uCKEWJP42U41gRWuxw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Updated Task Title\",\r\n    \"description\": \"This is the updated description.\",\r\n    \"dueDate\": \"2024-01-15T00:00:00Z\",\r\n    \"status\": \"In Progress\",\r\n    \"assignedTo\": \"66ee79597ec531f000651535\"\r\n}z\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks/66ee834a58309b2f21f58507",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"66ee834a58309b2f21f58507"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Updated Task Title\",\r\n    \"description\": \"This is the updated description.\",\r\n    \"dueDate\": \"2024-01-15T00:00:00Z\",\r\n    \"status\": \"In Progress\",\r\n    \"assignedTo\": \"66ee79597ec531f000651535\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tasks/66ee834a58309b2f21f58507",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tasks",
+								"66ee834a58309b2f21f58507"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "255"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ff-G4Wj2QYlqpYy9BuBaBxJuhlX2Ps\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Sep 2024 08:32:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"66ee834a58309b2f21f58507\",\n    \"title\": \"Updated Task Title\",\n    \"description\": \"This is the updated description.\",\n    \"dueDate\": \"2024-01-15T00:00:00.000Z\",\n    \"status\": \"In Progress\",\n    \"owner\": \"66ee7bc64d116a515bac2a29\",\n    \"assignedTo\": \"66ee79597ec531f000651535\",\n    \"__v\": 0\n}"
+				}
+			]
+		}
+	]
+}
