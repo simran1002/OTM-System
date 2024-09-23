@@ -18,7 +18,7 @@ const UpdateTask = () => {
     useEffect(() => {
         const fetchTask = async () => {
             const token = localStorage.getItem('token');
-            const response = await axios.get(`http://localhost:5000/api/tasks/${id}`, {
+            const response = await axios.get(`https://otm-system.onrender.com/api/tasks/${id}`, {
                 headers: { Authorization: token }
             });
             setTask(response.data);
@@ -26,7 +26,7 @@ const UpdateTask = () => {
 
         const fetchUsers = async () => {
             const token = localStorage.getItem('token');
-            const response = await axios.get(`http://localhost:5000/api/users`, {
+            const response = await axios.get(`https://otm-system.onrender.com/api/users`, {
                 headers: { Authorization: token }
             });
             setUsers(response.data);
@@ -44,7 +44,7 @@ const UpdateTask = () => {
     const handleUpdateTask = async (e) => {
         e.preventDefault();
         const token = localStorage.getItem('token');
-        await axios.patch(`http://localhost:5000/api/tasks/${id}`, task, {
+        await axios.patch(`https://otm-system.onrender.com/api/tasks/${id}`, task, {
             headers: { Authorization: token }
         });
         alert('Task updated successfully!');
