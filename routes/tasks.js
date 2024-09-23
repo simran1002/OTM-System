@@ -5,6 +5,7 @@ const auth = require('../middleware/auth');
 const router = express.Router();
 const { sendEmail } = require('../emailService');
 
+
 // Create Task
 router.post('/', auth, async (req, res) => {
     const { title, description, dueDate } = req.body;
@@ -46,4 +47,42 @@ router.patch('/:id', auth, async (req, res) => {
     }
 });
 
+// Test Email Route
+router.post('/send-reminder', auth, async (req, res) => {
+    const currentTime = new Date();
+    const thirtyMinutesLater = new Date(currentTime.getTime() + 30 * 60000);
+
+    try {
+        const tasksDue = await Task.find({
+            assignedTo: req.user.id,
+            dueDate: { $gte: currentTime, $lte: thirtyMinutesLater }
+        }).populate('assignedTo');
+
+        if (tasksDue.length === 0) {
+            return res.status(200).send('No tasks due in the next 30 minutes.');
+        }
+
+        for (const task of tasksDue) {
+            const { assignedTo, title, dueDate } = task;
+            const email = assignedTo.email;
+            const emailBody = generateTaskEmail(assignedTo.name, title, dueDate);
+
+            // Send the email
+            try {
+                await sendEmail(email, `Task Due Soon: ${title}`, emailBody);
+                console.log(`Reminder email sent to ${email}`);
+            } catch (error) {
+                console.error(`Error sending email to ${email}:`, error);
+            }
+        }
+
+        res.status(200).send(`Reminder emails sent to ${tasksDue.length} tasks.`);
+    } catch (error) {
+        console.error('Error checking for due tasks:', error);
+        res.status(500).send('Error checking for due tasks.');
+    }
+});
+
+
 module.exports = router;
+

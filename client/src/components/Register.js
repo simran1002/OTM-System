@@ -13,7 +13,7 @@ const Register = () => {
 
     const handleRegister = async (e) => {
         e.preventDefault();
-        await axios.post('https://otm-system.onrender.com/api/auth/register', { username, email, password, role });
+        await axios.post('http://localhost:5000/api/auth/register', { username, email, password, role });
         navigate('/login');
     };
 

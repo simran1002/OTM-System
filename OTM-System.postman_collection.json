@@ -113,7 +113,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"Simran Yadav\",\r\n    \"password\": \"@Simran123\"\r\n}\r\n",
+					"raw": "{\r\n    \"username\": \"Rani\",\r\n    \"password\": \"@Rani123\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -121,13 +121,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://otm-system.onrender.com/api/auth/login",
-					"protocol": "https",
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
 					"host": [
-						"otm-system",
-						"onrender",
-						"com"
+						"localhost"
 					],
+					"port": "5000",
 					"path": [
 						"api",
 						"auth",
@@ -508,6 +507,115 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"_id\": \"66ee834a58309b2f21f58507\",\n    \"title\": \"Updated Task Title\",\n    \"description\": \"This is the updated description.\",\n    \"dueDate\": \"2024-01-15T00:00:00.000Z\",\n    \"status\": \"In Progress\",\n    \"owner\": \"66ee7bc64d116a515bac2a29\",\n    \"assignedTo\": \"66ee79597ec531f000651535\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Test-mail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZjFjMmU4ZTUyOTRjZTQzMzFhODM0MyIsInJvbGUiOiJBc3NpZ25lZCBVc2VyIiwiaWF0IjoxNzI3MTIxMzMyLCJleHAiOjE3MjcxMjQ5MzJ9.ADlsxuZnTy6JRoAJPyGfO-5o3AdYlKHQwf3PH8dtaf4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/tasks/send-reminder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks",
+						"send-reminder"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tasks/send-reminder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tasks",
+								"send-reminder"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"24-SdVPZi8HSqUS7OjtrWr1dqA0cPc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 23 Sep 2024 19:55:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "No tasks due in the next 30 minutes."
 				}
 			]
 		}
