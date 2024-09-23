@@ -9,7 +9,7 @@ const TaskList = () => {
         const fetchTasks = async () => {
             const token = localStorage.getItem('token');
             try {
-                const response = await axios.get('http://localhost:5000/api/tasks', { headers: { Authorization: token } });
+                const response = await axios.get('https://otm-system.onrender.com/api/tasks', { headers: { Authorization: token } });
                 setTasks(response.data);
             } catch (error) {
                 console.error('Error fetching tasks:', error);
