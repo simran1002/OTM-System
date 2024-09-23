@@ -1,4 +1,4 @@
-# Task Management System
+# OTM System
 
 The application includes features like email notifications for task assignments and updates, ensuring efficient communication and workflow management. The authentication and authorization are managed through JWT-based secure APIs.
 
